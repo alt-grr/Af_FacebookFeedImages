@@ -6,7 +6,7 @@ class Af_FacebookFeedImages extends Plugin {
 
 	function about() {
 		return array(
-			1.0,
+			1.1,
 			"Insert larger images in Facebook feeds.",
 			"kuc"
 		);
@@ -24,7 +24,7 @@ class Af_FacebookFeedImages extends Plugin {
 	function hook_article_filter($article) {
 		$owner_uid = $article["owner_uid"];
 
-		if (strpos($article["link"], "facebook.com/photo.php") !== FALSE) {
+		if (strpos($article["link"], "https://www.facebook.com/") === 0) {
 			if (strpos($article["plugin_data"], "facebookfeedimages,$owner_uid:") === FALSE) {
 				if (strpos($article["content"], '_s.jpg"') !== FALSE) {
 					$article["content"] = str_replace('_s.jpg"', '_n.jpg"', $article["content"]);
