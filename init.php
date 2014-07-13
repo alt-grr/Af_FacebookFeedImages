@@ -6,7 +6,7 @@ class Af_FacebookFeedImages extends Plugin {
 
 	function about() {
 		return array(
-			1.1,
+			1.2,
 			"Insert larger images in Facebook feeds.",
 			"kuc"
 		);
